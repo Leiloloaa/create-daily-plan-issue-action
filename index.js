@@ -1,29 +1,34 @@
-// github api
-// octokit 封装好的 github api 库
-const { Octokit } = require('octokit')
-const dayjs = require('dayjs')
-const core = require('@actions/core')
+const github = require('@actions/github');
+const core = require('@actions/core');
+const dayjs = require('dayjs');
 
-// Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
-const token = core.getInput("token")
-const octokit = new Octokit({ auth: token });
+(function main() {
+    const token = core.getInput('token');
+    const octokit = github.getOctokit(token);
 
-// creates an installation access token as needed
-// assumes that installationId 123 belongs to @octocat, otherwise the request will fail
-octokit.rest.issues.create({
-    owner: "Leiloloaa",
-    repo: "daily-plan",
-    title: getTitle(),
-    body: getBody()
-});
+    createIssue(octokit);
+})();
 
-// YYYY-mm-dd
+function createIssue() {
+    octokit.rest.issues.create({
+        owner: 'Leiloloaa',
+        repo: 'daily-plan',
+        title: getTitle(),
+        body: getBody()
+    });
+}
+
 function getTitle() {
-    // 如何处理
-    // 转换时间
-    return dayjs().format('YYYY-MM-DD')
+    return `【每日计划】 ${getDate()}`;
+}
+
+function getDate() {
+    // 运行环境是 UTC 时区
+    // 需要转换成 中国时区
+    // 中国时区 = UTC时区 + 8小时
+    return dayjs().add('8', 'hour').format('YYYY-MM-DD');
 }
 
 function getBody() {
-    return "[个人简介](https://github.com/Leiloloaa/Leiloloaa/blob/main/README.md)"
+    return '[个人简介](https://github.com/Leiloloaa/Leiloloaa/blob/main/README.md)';
 }

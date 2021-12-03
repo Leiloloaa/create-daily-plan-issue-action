@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "Create Daily plan Issue"
+description: "automatic create daily plan issue for Leiloloaa/daily-plan"
 inputs:
   token: # id of input
     description: 'github token'

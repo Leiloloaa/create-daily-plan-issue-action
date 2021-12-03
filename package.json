@@ -1,7 +1,7 @@
 {
-    "name": "githubaction",
+    "name": "hello-world-javascript-action",
     "version": "1.0.0",
-    "description": "每日自动创建 issues",
+    "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,5 +9,11 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "@actions/core": "^1.6.0",
+        "@actions/github": "^5.0.0",
+        "dayjs": "^1.10.7",
+        "octokit": "^1.7.0"
+    }
 }
