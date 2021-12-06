@@ -13,8 +13,8 @@ jobs:
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         # id: hello
-        # with:
-        #   token: ${{secrets.TOKEN}}
+        with:
+          token: ${{secrets.TOKEN}}
       # Use the output from the `hello` step
       # - name: Get the output time
       #   run: echo "The time was ${{ steps.hello.outputs.time }}"

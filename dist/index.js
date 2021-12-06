@@ -19698,14 +19698,14 @@ const core = __nccwpck_require__(2186);
 const dayjs = __nccwpck_require__(7401);
 
 // (function main() {
-//     const token = core.getInput('token');
 //     const octokit = github.getOctokit(token);
 
 //     createIssue(octokit);
 // })();
 
+const token = core.getInput('token');
 const octokit = new Octokit({
-    auth: `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`
+    auth: token
 })
 
 createIssue()
