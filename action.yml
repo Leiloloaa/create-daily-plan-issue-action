@@ -1,9 +1,9 @@
 name: "Create Daily plan Issue"
 description: "automatic create daily plan issue for Leiloloaa/daily-plan"
-inputs:
-  token: # id of input
-    description: 'github token'
-    required: true
+# inputs:
+#   token: # id of input
+#     description: 'github token'
+#     required: true
 # outputs:
 #   time: # id of output
 #     description: 'The time we greeted you'
