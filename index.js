@@ -1,24 +1,18 @@
-const { Octokit } = require('Octokit');
-const core = require('@actions/core');
-const dayjs = require('dayjs');
+const core = require("@actions/core");
+const github = require("@actions/github");
+const dayjs = require("dayjs");
 
-// (function main() {
-//     const octokit = github.getOctokit(token);
+(function main() {
+    const token = core.getInput("token");
+    const octokit = github.getOctokit(token);
 
-//     createIssue(octokit);
-// })();
-
-const token = core.getInput('token');
-const octokit = new Octokit({
-    auth: token
-})
-
-createIssue()
+    createIssue(octokit);
+})();
 
 function createIssue() {
     octokit.rest.issues.create({
         owner: 'Leiloloaa',
-        repo: 'create-daily-plan-issue-action',
+        repo: 'daily-plan',
         title: getTitle(),
         body: getBody()
     });
