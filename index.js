@@ -1,15 +1,15 @@
-const core = require("@actions/core");
-const github = require("@actions/github");
-const dayjs = require("dayjs");
+const core = require('@actions/core');
+const github = require('@actions/github');
+const dayjs = require('dayjs');
 
 (function main() {
-    const token = core.getInput("token");
+    const token = core.getInput('token');
     const octokit = github.getOctokit(token);
 
     createIssue(octokit);
 })();
 
-function createIssue() {
+function createIssue(octokit) {
     octokit.rest.issues.create({
         owner: 'Leiloloaa',
         repo: 'daily-plan',
