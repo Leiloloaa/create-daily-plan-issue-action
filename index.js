@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const dayjs = require('dayjs');
+const myWisdom = require('./wisdom');
 
 (function main() {
     const token = core.getInput('token');
@@ -19,7 +20,8 @@ function createIssue(octokit) {
 }
 
 function getTitle() {
-    return `【每日计划】 ${getDate()}`;
+    let saying = myWisdom.wisdom
+    return `【${getDate()}】 ${saying[Math.floor(Math.random() * saying.length)]}`;
 }
 
 function getDate() {
