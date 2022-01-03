@@ -1,5 +1,5 @@
-name: "Create Daily plan Issue"
-description: "automatic create daily plan issue for Leiloloaa/daily-plan"
+name: 'Create Study Every Day Issue'
+description: 'automatic create study every day issue for Leiloloaa/study-every-day'
 inputs:
   token:
     description: 'github token'

@@ -11572,7 +11572,7 @@ const myWisdom = __nccwpck_require__(8329);
 function createIssue(octokit) {
     octokit.rest.issues.create({
         owner: 'Leiloloaa',
-        repo: 'daily-plan',
+        repo: 'study-every-day',
         title: getTitle(),
         body: getBody()
     });

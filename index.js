@@ -13,7 +13,7 @@ const myWisdom = require('./wisdom');
 function createIssue(octokit) {
     octokit.rest.issues.create({
         owner: 'Leiloloaa',
-        repo: 'daily-plan',
+        repo: 'study-every-day',
         title: getTitle(),
         body: getBody()
     });
