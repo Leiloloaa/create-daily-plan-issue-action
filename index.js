@@ -22,7 +22,7 @@ function createIssue(octokit) {
 function getTitle() {
   // let saying = myWisdom.wisdom
   // ${saying[Math.floor(Math.random() * saying.length)]
-  return `【每日计划】 ${getDate()}}`;
+  return `【每日计划】 ${getDate()}`;
 }
 
 function getDate() {
